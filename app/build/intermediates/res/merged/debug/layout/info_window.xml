@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:alpha="0.7"
+    android:background="@drawable/infowindow_background"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/horizontal_linearlayout"
+        android:layout_width="match_parent"
+        android:paddingRight="2dp"
+        android:layout_height="wrap_content" >
+
+
+        <ImageButton
+            android:id="@+id/image_button_garbage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:gravity="right"
+            android:src="@drawable/garbage" />
+        <TextView
+            android:id="@+id/window_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:textColor="@color/window_info_text_color" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/window_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxWidth="200dp"
+        android:textColor="@color/window_info_text_color" />
+
+</LinearLayout><!-- From: file:/home/david/Android/AndroidStudioProjects/Track1/app/src/main/res/layout/info_window.xml -->

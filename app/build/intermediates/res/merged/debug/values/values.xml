@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/home/david/Android/AndroidStudioProjects/Track1/app/src/main/res/values/entries.xml -->
+    <eat-comment/>
+    <string-array name="end">
+        <item>18时</item>
+        <item>20时</item>
+        <item>22时</item>
+        <item>24时</item>
+    </string-array>
+    <string-array name="interval">
+        <item>10分钟 </item>
+        <item>20分钟</item>
+        <item>30分钟</item>
+        <item>1小时</item>
+        <item>2小时</item>
+    </string-array>
+    <string-array name="start">
+        <item>5时</item>
+        <item>7时</item>
+        <item>9时</item>
+        <item>11时</item>
+    </string-array>
+    <!-- From: file:/home/david/Android/AndroidStudioProjects/Track1/app/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <color name="background">#E8DDCB</color>
+    <color name="button_background">#036564</color>
+    <color name="grey_background">#ffefefef</color>
+    <color name="layout_background">#CDB380</color>
+    <color name="layout_border">#ffcccccc</color>
+    <color name="map_line_color">#031634</color>
+    <color name="pressed_title_foreground_color">#ffefefef</color>
+    <color name="title_background">#036564</color>
+    <color name="title_foreground_color">#fffff5f7</color>
+    <color name="window_info_background_color">#033649</color>
+    <color name="window_info_text_color">#fffff5f7</color>
+    <!-- From: file:/home/david/Android/AndroidStudioProjects/Track1/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_vertical_padding">12dp</dimen>
+    <dimen name="common_text_size">18sp</dimen>
+    <dimen name="layout_horizontal_padding">8dp</dimen>
+    <dimen name="layout_interval">12dp</dimen>
+    <dimen name="layout_minheight">36dp</dimen>
+    <dimen name="layout_vertical_padding">12dp</dimen>
+    <dimen name="title_height">40dp</dimen>
+    <!-- From: file:/home/david/Android/AndroidStudioProjects/Track1/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="action_settings">设置</string>
+    <string name="add_button_name">添加</string>
+    <string name="app_name">android</string>
+    <string name="date_item_title">日期</string>
+    <string name="delete_button_name">删除</string>
+    <string name="detail_content_hint">内容</string>
+    <string name="detail_item_title">点滴记录</string>
+    <string name="edit_button_name">编辑</string>
+    <string name="finish_button_name">完成</string>
+    <string name="location_name_item_title">位置</string>
+    <string name="photo_button_name">拍照</string>
+    <string name="photo_item_title">精彩瞬间</string>
+    <string name="photo_view_description">image</string>
+    <string name="save_button_name">保存</string>
+    <string name="search_button_name">搜索</string>
+    <string name="settings_end_item_title">结束时间</string>
+    <string name="settings_interval_item_title">间隔时间</string>
+    <string name="settings_record_switch_title">踪迹记录</string>
+    <string name="settings_start_item_title">开始时间</string>
+    <string name="time_item_title">时间</string>
+    <!-- From: file:/home/david/Android/AndroidStudioProjects/Track1/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <style name="buttonStyle" parent="android:style/Widget.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/button_background</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">26dp</item>
+        <item name="android:textColor">@drawable/button_text</item>
+        <item name="android:textSize">@dimen/common_text_size</item>
+    </style>
+    <style name="fixedGridViewStyle" parent="android:style/Widget.GridView">
+	    <item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:horizontalSpacing">2dp</item>
+		<item name="android:numColumns">auto_fit</item>
+		<item name="android:scrollbars">none</item>
+		<item name="android:verticalSpacing">2dp</item>
+		<item name="android:paddingTop">@dimen/layout_vertical_padding</item>
+		<item name="android:paddingBottom">@dimen/layout_vertical_padding</item>
+	</style>
+    <style name="infoTextViewStyle" parent="android:style/Widget.TextView">
+        <item name="android:maxWidth">200dp</item>
+		<item name="android:gravity">right</item>
+    </style>
+    <style name="sublayoutStyle" parent="android:style/Widget.Button">
+        <item name="android:background">@drawable/layout_shape</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">@dimen/layout_minheight</item>
+        <item name="android:paddingLeft">@dimen/layout_horizontal_padding</item>
+        <item name="android:paddingRight">@dimen/layout_horizontal_padding</item>
+    </style>
+</resources>

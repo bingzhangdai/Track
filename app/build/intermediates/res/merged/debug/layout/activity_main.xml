@@ -1,0 +1,108 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context="com.track.android.MainActivity" >
+		
+	<LinearLayout
+	    android:id="@+id/map"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_alignParentTop="true"
+	    android:background="#ffffffff"
+	    android:orientation="vertical" >
+
+		<com.baidu.mapapi.map.MapView
+		    android:id="@+id/mapview"
+		    android:layout_width="fill_parent"
+		    android:layout_height="match_parent"
+		    android:clickable="true" >
+		</com.baidu.mapapi.map.MapView>
+
+	</LinearLayout>
+
+	<RelativeLayout
+	    android:id="@+id/main_title"
+	    android:layout_width="fill_parent"
+	    android:layout_height="@dimen/title_height"
+	    android:alpha="0.85"
+	    android:background="@color/title_background"
+	    android:gravity="center_vertical" >
+
+	    <TextView
+	        android:id="@+id/date_text_view"
+	        android:layout_width="240dp"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:layout_centerVertical="true"
+	        android:gravity="center_horizontal"
+	        android:textColor="@color/title_foreground_color"
+	        android:textSize="@dimen/common_text_size" />
+
+	    <ImageButton
+	        android:id="@+id/search_button"
+	        style="@style/buttonStyle"
+	        android:layout_alignParentRight="true"
+	        android:layout_centerVertical="true"
+	        android:contentDescription="@string/search_button_name"
+	        android:onClick="onSearchButtonClick"
+	        android:src="@drawable/search_icons"
+	        android:color="@drawable/button_text" />
+
+	    <ImageButton
+	        android:id="@+id/delete_button"
+	        style="@style/buttonStyle"
+	        android:layout_width="26dp"
+	        android:layout_centerVertical="true"
+	        android:layout_toRightOf="@+id/add_button"
+	        android:contentDescription="@string/delete_button_name"
+	        android:onClick="onListButtonClick"
+	        android:scaleType="centerInside"
+	        android:src="@drawable/list"
+	        android:color="@drawable/button_text" />
+
+	    <ImageButton
+	        android:id="@+id/add_button"
+	        style="@style/buttonStyle"
+	        android:layout_width="26dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_centerVertical="true"
+	        android:contentDescription="@string/add_button_name"
+	        android:onClick="onAddButtonClick"
+	        android:scaleType="centerInside"
+	        android:src="@drawable/plus"
+	        android:color="@drawable/button_text" />
+
+	</RelativeLayout>
+
+	<LinearLayout
+	    android:id="@+id/menu"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/main_title"
+	    android:orientation="vertical"
+	    android:alpha="0.8"
+	    android:visibility="gone" >
+
+	    <LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="match_parent"
+	        android:background="@color/grey_background"
+	        android:orientation="vertical"
+	        android:paddingBottom="15dp"
+	        android:paddingLeft="5dp"
+	        android:paddingRight="5dp"
+	        android:paddingTop="15dp" >
+            <DatePicker
+                android:id="@+id/datepicker"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:calendarViewShown="false" />
+	    </LinearLayout>
+	</LinearLayout>
+
+	
+</RelativeLayout>
+<!-- From: file:/home/david/Android/AndroidStudioProjects/Track1/app/src/main/res/layout/activity_main.xml -->

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+	<LinearLayout
+		android:id="@+id/menulinear00"
+		android:layout_width="fill_parent"
+		android:layout_height="@dimen/title_height"
+		android:background="@color/title_background"
+		android:orientation="horizontal"
+		android:gravity="center_vertical"
+		>
+</LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/menulinear00"
+        android:contentDescription="@string/photo_view_description" />
+
+    <ImageButton
+        android:id="@+id/image_button_left"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:background="#00000000"
+        android:onClick="onLeftButtonClick"
+        android:src="@drawable/left_arrow" />
+    <ImageButton
+        android:id="@+id/image_button_right"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="#00000000"
+        android:onClick="onRightButtonClick"
+        android:src="@drawable/right_arrow" />
+
+</RelativeLayout>
+<!-- From: file:/home/david/Android/AndroidStudioProjects/Track1/app/src/main/res/layout/activity_photo.xml -->
