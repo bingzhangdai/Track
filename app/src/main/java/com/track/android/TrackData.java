@@ -34,7 +34,8 @@ public class TrackData implements Serializable{
 		this.setLongitude(longitude);
 		this.setLatitude(latitude);
 		this.setDate(date);
-		this.setHour(hour);
+		//this.setHour(hour);
+		this.hour = hour;
 		this.setMinute(minute);
 	}
 	TrackData(String place_name, double latitude, double longitude, 

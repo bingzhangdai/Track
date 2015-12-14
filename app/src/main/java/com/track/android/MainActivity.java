@@ -19,7 +19,9 @@ import com.baidu.mapapi.map.Marker;
 import com.baidu.mapapi.map.MarkerOptions;
 import com.baidu.mapapi.map.Overlay;
 import com.baidu.mapapi.map.PolylineOptions;
+import com.baidu.mapapi.map.Stroke;
 import com.baidu.mapapi.model.LatLng;
+import com.baidu.mapapi.SDKInitializer;
 import com.baidu.mapapi.model.LatLngBounds;
 import com.baidu.mapapi.search.geocode.GeoCodeResult;
 import com.baidu.mapapi.search.geocode.GeoCoder;
@@ -29,6 +31,8 @@ import com.baidu.mapapi.search.geocode.ReverseGeoCodeResult;
 import com.track.android.R;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -39,6 +43,7 @@ import android.graphics.Paint.Align;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -47,20 +52,34 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.animation.AlphaAnimation;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements AdapterView.OnItemClickListener{
 //	int displayWidth;
+
+	private DrawerLayout mDrawerLayout;
+	private ListView mDrawerList;
+	private ArrayList<String> menuLists;
+	{
+		menuLists = new ArrayList<String>();
+		menuLists.add("运动信息");
+		menuLists.add("离线地图");
+	}
+	private ArrayAdapter<String> adapter;
+
 	private final int DURATION = 500;
 	private LinearLayout menu;
 	private MapView mapView;
 	private BaiduMap map;
-	private ArrayList<Overlay> overlays = new ArrayList<Overlay>();
+	private ArrayList<Overlay> overlays = new ArrayList<>();
 	private AlphaAnimation disappearAlpha;
 	private AlphaAnimation appearAlpha;
 	private Bitmap bitmap;
@@ -74,14 +93,15 @@ public class MainActivity extends Activity {
 		paint.setTextSize(20);
 		paint.setAntiAlias(true);
 	}
-	
+
 	private TrackData dragPointData;
 	private int type;
 	private static int LONG_CLICK_TRIGGER  = 0;
 	private static int DRAG_TRIGGER = 1;
-	private GeoCoder mSearch = GeoCoder.newInstance();{
+	private GeoCoder mSearch = GeoCoder.newInstance();
+	{
 	mSearch.setOnGetGeoCodeResultListener(new OnGetGeoCoderResultListener() {
-		
+
 		@Override
 		public void onGetReverseGeoCodeResult(ReverseGeoCodeResult result) {
 			if (result == null || result.getLocation() == null)
@@ -91,7 +111,7 @@ public class MainActivity extends Activity {
 				LatLng loc = result.getLocation();
 				DatePicker datePicker = (DatePicker)menu.findViewById(R.id.datepicker);
 				Intent intent = new Intent();
-				String date = datePicker.getYear() + "-" 
+				String date = datePicker.getYear() + "-"
 	    				+ (datePicker.getMonth() + 1) + "-"
 	    				+ datePicker.getDayOfMonth();
 				intent.putExtra(TrackData.LATITUDE_STRING, loc.latitude);
@@ -112,33 +132,40 @@ public class MainActivity extends Activity {
 				showOverlays(dragPointData.getDate());
 			}
 		}
-		
+
 		@Override
 		public void onGetGeoCodeResult(GeoCodeResult result) {
 		}
 	});
 	}
-	
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
     	Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
         super.onCreate(savedInstanceState);
-        SDKInitializer.initialize(getApplicationContext()); 
+        SDKInitializer.initialize(getApplicationContext());
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         startService(new Intent(getApplicationContext(), TrackService.class));
         dateTextView = (TextView)findViewById(R.id.date_text_view);
-        
+
+		mDrawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
+		mDrawerList = (ListView)findViewById(R.id.left_drawer);
+		adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, menuLists);
+		mDrawerList.setAdapter(adapter);
+		mDrawerList.setOnItemClickListener(this);
+
         mapView = (MapView)findViewById(R.id.mapview);
         map = mapView.getMap();
         menu = (LinearLayout)findViewById(R.id.menu);
 		datePicker = (DatePicker)menu.findViewById(R.id.datepicker);
-        bitmap = BitmapFactory.decodeResource(getResources(), 
+        bitmap = BitmapFactory.decodeResource(getResources(),
     			R.drawable.overlay);
         disappearAlpha = new AlphaAnimation(0.8f, 0);
         appearAlpha = new AlphaAnimation(0, 0.8f);
         disappearAlpha.setDuration(DURATION);
         appearAlpha.setDuration(DURATION);
+		map.setTrafficEnabled(true);
         map.setOnMapLongClickListener(longClickListener);
         map.setOnMarkerClickListener(markerClickListener);
         map.setOnMarkerDragListener(markerDragListener);
@@ -159,7 +186,7 @@ public class MainActivity extends Activity {
 		    	db.close();
 				return datas;
 			}
-			
+
 			@Override
 			protected void onPostExecute(ArrayList<TrackData> datas) {
 		    	MapStatusUpdate update;
@@ -178,7 +205,7 @@ public class MainActivity extends Activity {
 		        	builder.include(loc);
 		        	Bitmap currentBitmap = bitmap.copy(bitmap.getConfig(), true);
 		        	Canvas canvas = new Canvas(currentBitmap);
-		        	canvas.drawText(String.valueOf(i + 1), canvas.getWidth()/2, 
+		        	canvas.drawText(String.valueOf(i + 1), canvas.getWidth()/2,
 		        			canvas.getHeight()/2 + 2, paint);
 		        	BitmapDescriptor bitmapDescriptor = BitmapDescriptorFactory.fromBitmap(currentBitmap);
 		        	MarkerOptions markerOptions = new MarkerOptions().position(loc)
@@ -207,7 +234,8 @@ public class MainActivity extends Activity {
 				android.R.anim.fade_out);
     }
     public void onAddButtonClick(View v){
-    	Toast.makeText(getBaseContext(), "长按地图添加新的踪迹", Toast.LENGTH_LONG).show();
+        mDrawerLayout.openDrawer(mDrawerList);
+//    	Toast.makeText(getBaseContext(), "长按地图添加新的踪迹", Toast.LENGTH_LONG).show();
     }
     public void onSearchButtonClick(View v){
     	if (menu.getVisibility() == View.GONE)
@@ -215,9 +243,9 @@ public class MainActivity extends Activity {
 	    	menu.setVisibility(View.VISIBLE);
 	    	menu.startAnimation(appearAlpha);
     	}
-    	else 
+    	else
     	{
-    		String date = datePicker.getYear() + "-" 
+    		String date = datePicker.getYear() + "-"
     				+ (datePicker.getMonth() + 1) + "-"
     				+ datePicker.getDayOfMonth();
     		Log.i("success", date);
@@ -229,19 +257,19 @@ public class MainActivity extends Activity {
     	}
     }
     @Override
-    protected void onDestroy() {  
+    protected void onDestroy() {
         super.onDestroy();
-        mapView.onDestroy();  
+        mapView.onDestroy();
     }
     @Override
-    protected void onResume() {  
+    protected void onResume() {
         super.onResume();
         mapView.onResume();
-    }  
-    @Override  
-    protected void onPause() {  
-        super.onPause();  
-        mapView.onPause();  
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mapView.onPause();
     }
     BaiduMap.OnMapLongClickListener longClickListener = new BaiduMap.OnMapLongClickListener(){
 
@@ -252,12 +280,12 @@ public class MainActivity extends Activity {
 		}
     };
     BaiduMap.OnMapClickListener mapClickListener = new OnMapClickListener() {
-		
+
 		@Override
 		public boolean onMapPoiClick(MapPoi arg0) {
 			return false;
 		}
-		
+
 		@Override
 		public void onMapClick(LatLng arg0) {
 			map.hideInfoWindow();
@@ -271,7 +299,7 @@ public class MainActivity extends Activity {
 			final TrackData data = (TrackData)marker.getExtraInfo().getSerializable("data");
 			View view = View.inflate(getBaseContext(), R.layout.info_window, null);
 			view.setOnClickListener(new OnClickListener() {
-				
+
 				@Override
 				public void onClick(View v) {
 					Intent intent = new Intent();
@@ -284,13 +312,13 @@ public class MainActivity extends Activity {
 				}
 			});
 			InfoWindow infoWindow = new InfoWindow(view, marker.getPosition(), -47);
+
 			((TextView)view.findViewById(R.id.window_time)).setText(
-					data.getHour() + ":" + data.getMinute());
-			
+					"" + String.format("%d", data.getHour()) + ":" + data.getMinute());
 			((TextView)view.findViewById(R.id.window_location)).setText(data.getPlaceName());
 			ImageButton garbageButton = (ImageButton)view.findViewById(R.id.image_button_garbage);
 			garbageButton.setOnClickListener(new OnClickListener() {
-				
+
 				@Override
 				public void onClick(View v) {
 					DatabaseHelper db = new DatabaseHelper(getBaseContext());
@@ -303,14 +331,14 @@ public class MainActivity extends Activity {
 			map.showInfoWindow(infoWindow);
 			return false;
 		}
-    	
+
     };
     BaiduMap.OnMarkerDragListener markerDragListener = new BaiduMap.OnMarkerDragListener() {
-		
+
 		@Override
 		public void onMarkerDragStart(Marker arg0) {
 		}
-		
+
 		@Override
 		public void onMarkerDragEnd(Marker marker) {
 			LatLng pos = marker.getPosition();
@@ -320,7 +348,7 @@ public class MainActivity extends Activity {
 			type = DRAG_TRIGGER;
 			mSearch.reverseGeoCode(new ReverseGeoCodeOption().location(pos));
 		}
-		
+
 		@Override
 		public void onMarkerDrag(Marker arg0) {
 		}
@@ -348,7 +376,7 @@ public class MainActivity extends Activity {
 				DatabaseHelper db = new DatabaseHelper(getBaseContext());
 				db.deleteData(tdata);
 				db.close();
-				map.clear(); 
+				map.clear();
 				showOverlays(tdata.getDate());
 			}
 			else{
@@ -381,4 +409,22 @@ public class MainActivity extends Activity {
     	}
     	return true;
     }
+
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		if (menuLists.get(position).equals("离线地图")) {
+//            Intent intent = new Intent(getBaseContext(), offline_map.class);
+//            startActivityForResult(intent, offline_map.MAP_RESULT_CODE);
+//            overridePendingTransition(R.anim.list_activity_appear,
+//                    android.R.anim.fade_out);
+            startActivityForResult(new Intent(getBaseContext(), offline_map.class), offline_map.MAP_RESULT_CODE);
+            overridePendingTransition(R.anim.list_activity_appear,
+                    android.R.anim.fade_out);
+		}
+		if (menuLists.get(position).equals("运动信息")) {
+			onListButtonClick(view);
+		}
+		mDrawerLayout.closeDrawer(mDrawerList);
+	}
+
 }

@@ -22,29 +22,64 @@ public final class R {
         public static final int start=0x7f070002;
     }
     public static final class attr {
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int exampleColor=0x7f010002;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int exampleDimension=0x7f010001;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int exampleDrawable=0x7f010003;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int exampleString=0x7f010000;
     }
     public static final class color {
         public static final int background=0x7f080000;
-        public static final int button_background=0x7f080001;
-        public static final int grey_background=0x7f080002;
-        public static final int layout_background=0x7f080003;
-        public static final int layout_border=0x7f080004;
-        public static final int map_line_color=0x7f080005;
-        public static final int pressed_title_foreground_color=0x7f080006;
-        public static final int title_background=0x7f080007;
-        public static final int title_foreground_color=0x7f080008;
-        public static final int window_info_background_color=0x7f080009;
-        public static final int window_info_text_color=0x7f08000a;
+        public static final int but_background=0x7f080001;
+        public static final int button_background=0x7f080002;
+        public static final int grey_background=0x7f080003;
+        public static final int layout_background=0x7f080004;
+        public static final int layout_border=0x7f080005;
+        public static final int map_line_color=0x7f080006;
+        public static final int pressed_title_foreground_color=0x7f080007;
+        public static final int title_background=0x7f080008;
+        public static final int title_foreground_color=0x7f080009;
+        public static final int window_info_background_color=0x7f08000a;
+        public static final int window_info_text_color=0x7f08000b;
     }
     public static final class dimen {
         public static final int activity_horizontal_margin=0x7f060000;
-        public static final int activity_vertical_padding=0x7f060001;
-        public static final int common_text_size=0x7f060002;
-        public static final int layout_horizontal_padding=0x7f060003;
-        public static final int layout_interval=0x7f060004;
-        public static final int layout_minheight=0x7f060005;
-        public static final int layout_vertical_padding=0x7f060006;
-        public static final int title_height=0x7f060007;
+        public static final int activity_vertical_margin=0x7f060001;
+        public static final int activity_vertical_padding=0x7f060002;
+        public static final int common_text_size=0x7f060003;
+        public static final int layout_horizontal_padding=0x7f060004;
+        public static final int layout_interval=0x7f060005;
+        public static final int layout_minheight=0x7f060006;
+        public static final int layout_vertical_padding=0x7f060007;
+        public static final int title_height=0x7f060008;
     }
     public static final class drawable {
         public static final int button_text=0x7f020000;
@@ -66,27 +101,38 @@ public final class R {
     }
     public static final class id {
         public static final int LinearLayout02=0x7f0b000d;
-        public static final int Spinner_start=0x7f0b002a;
+        public static final int Spinner_start=0x7f0b003b;
         public static final int TextView01=0x7f0b000f;
         public static final int TextView02=0x7f0b0006;
         public static final int TextView03=0x7f0b000a;
         public static final int TextView0311=0x7f0b0013;
-        public static final int action_settings=0x7f0b003a;
+        public static final int action_settings=0x7f0b0050;
         public static final int add_button=0x7f0b0015;
+        public static final int allcitylist=0x7f0b0033;
+        public static final int city=0x7f0b0028;
+        public static final int city_list=0x7f0b002e;
+        public static final int cityid=0x7f0b0027;
+        public static final int citylist_layout=0x7f0b0031;
+        public static final int clButton=0x7f0b002f;
         public static final int date=0x7f0b0008;
         public static final int date_text_view=0x7f0b001d;
-        public static final int datepicker=0x7f0b0024;
-        public static final int delete_button=0x7f0b0022;
-        public static final int delete_image_button=0x7f0b0031;
-        public static final int edit_button=0x7f0b002f;
-        public static final int horizontal_linearlayout=0x7f0b0032;
-        public static final int image_button_garbage=0x7f0b0033;
-        public static final int image_button_left=0x7f0b0026;
-        public static final int image_button_right=0x7f0b0027;
-        public static final int image_view=0x7f0b0030;
-        public static final int image_view_title=0x7f0b0037;
-        public static final int imageview=0x7f0b0025;
-        public static final int linearlayout=0x7f0b0036;
+        public static final int datepicker=0x7f0b0025;
+        public static final int del=0x7f0b002d;
+        public static final int delete_button=0x7f0b0023;
+        public static final int delete_image_button=0x7f0b0042;
+        public static final int display=0x7f0b004e;
+        public static final int drawer_layout=0x7f0b001e;
+        public static final int edit_button=0x7f0b0040;
+        public static final int horizontal_linearlayout=0x7f0b0043;
+        public static final int hotcitylist=0x7f0b0032;
+        public static final int image_button_garbage=0x7f0b0044;
+        public static final int image_button_left=0x7f0b0037;
+        public static final int image_button_right=0x7f0b0038;
+        public static final int image_view=0x7f0b0041;
+        public static final int image_view_title=0x7f0b0048;
+        public static final int imageview=0x7f0b0036;
+        public static final int left_drawer=0x7f0b0026;
+        public static final int linearlayout=0x7f0b0047;
         public static final int linearlayout00=0x7f0b0001;
         public static final int linearlayout001=0x7f0b0003;
         public static final int linearlayout011=0x7f0b0007;
@@ -97,44 +143,57 @@ public final class R {
         public static final int linearlayout0311=0x7f0b0014;
         public static final int listview=0x7f0b001b;
         public static final int listview_layout=0x7f0b001a;
+        public static final int localButton=0x7f0b0030;
+        public static final int localmap_layout=0x7f0b0034;
+        public static final int localmaplist=0x7f0b0035;
         public static final int location=0x7f0b0004;
-        public static final int location_edit=0x7f0b002c;
-        public static final int location_linearlayout=0x7f0b0039;
-        public static final int main=0x7f0b001e;
+        public static final int location_edit=0x7f0b003d;
+        public static final int location_linearlayout=0x7f0b004a;
+        public static final int main=0x7f0b001f;
         public static final int main_title=0x7f0b001c;
-        public static final int map=0x7f0b001f;
-        public static final int mapview=0x7f0b0020;
-        public static final int menu=0x7f0b0023;
+        public static final int map=0x7f0b0020;
+        public static final int mapview=0x7f0b0021;
+        public static final int menu=0x7f0b0024;
         public static final int menulinear00=0x7f0b0018;
         public static final int menulinear02=0x7f0b0005;
         public static final int menulinear03=0x7f0b0009;
         public static final int photos=0x7f0b0017;
-        public static final int relativelayout=0x7f0b0038;
+        public static final int ratio=0x7f0b004d;
+        public static final int relativelayout=0x7f0b0049;
+        public static final int remove=0x7f0b004f;
         public static final int scrollview=0x7f0b0000;
-        public static final int search_button=0x7f0b0021;
-        public static final int spinner_end=0x7f0b002b;
-        public static final int spinner_interval=0x7f0b0029;
+        public static final int search=0x7f0b0029;
+        public static final int search_button=0x7f0b0022;
+        public static final int spinner_end=0x7f0b003c;
+        public static final int spinner_interval=0x7f0b003a;
+        public static final int start=0x7f0b002b;
+        public static final int state=0x7f0b002a;
+        public static final int stop=0x7f0b002c;
         public static final int submit_button=0x7f0b0019;
-        public static final int switch1=0x7f0b0028;
+        public static final int switch1=0x7f0b0039;
         public static final int takephoto_button=0x7f0b0016;
         public static final int textView1=0x7f0b0002;
-        public static final int text_record=0x7f0b002e;
+        public static final int text_record=0x7f0b003f;
         public static final int textarea=0x7f0b0010;
         public static final int time=0x7f0b000c;
-        public static final int time_edit=0x7f0b002d;
-        public static final int window_location=0x7f0b0035;
-        public static final int window_time=0x7f0b0034;
+        public static final int time_edit=0x7f0b003e;
+        public static final int title=0x7f0b004b;
+        public static final int update=0x7f0b004c;
+        public static final int window_location=0x7f0b0046;
+        public static final int window_time=0x7f0b0045;
     }
     public static final class layout {
         public static final int activity_create_track=0x7f030000;
         public static final int activity_list=0x7f030001;
         public static final int activity_main=0x7f030002;
-        public static final int activity_photo=0x7f030003;
-        public static final int activity_settings=0x7f030004;
-        public static final int activity_track=0x7f030005;
-        public static final int imageview_in_gridview=0x7f030006;
-        public static final int info_window=0x7f030007;
-        public static final int listview_layout=0x7f030008;
+        public static final int activity_offline_map=0x7f030003;
+        public static final int activity_photo=0x7f030004;
+        public static final int activity_settings=0x7f030005;
+        public static final int activity_track=0x7f030006;
+        public static final int imageview_in_gridview=0x7f030007;
+        public static final int info_window=0x7f030008;
+        public static final int listview_layout=0x7f030009;
+        public static final int offline_local=0x7f03000a;
     }
     public static final class menu {
         public static final int main=0x7f0a0000;
@@ -155,11 +214,13 @@ public final class R {
         public static final int photo_view_description=0x7f09000c;
         public static final int save_button_name=0x7f09000d;
         public static final int search_button_name=0x7f09000e;
-        public static final int settings_end_item_title=0x7f09000f;
-        public static final int settings_interval_item_title=0x7f090010;
-        public static final int settings_record_switch_title=0x7f090011;
-        public static final int settings_start_item_title=0x7f090012;
-        public static final int time_item_title=0x7f090013;
+        public static final int set_date=0x7f09000f;
+        public static final int settings_end_item_title=0x7f090010;
+        public static final int settings_interval_item_title=0x7f090011;
+        public static final int settings_record_switch_title=0x7f090012;
+        public static final int settings_start_item_title=0x7f090013;
+        public static final int time_item_title=0x7f090014;
+        public static final int title_activity_base_map=0x7f090015;
     }
     public static final class style {
         /**  API 11 theme customizations can go here. 
@@ -179,4 +240,82 @@ public final class R {
         public static final int infoTextViewStyle=0x7f050004;
         public static final int sublayoutStyle=0x7f050005;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a offline_map.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #offline_map_exampleColor com.track.android:exampleColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #offline_map_exampleDimension com.track.android:exampleDimension}</code></td><td></td></tr>
+           <tr><td><code>{@link #offline_map_exampleDrawable com.track.android:exampleDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #offline_map_exampleString com.track.android:exampleString}</code></td><td></td></tr>
+           </table>
+           @see #offline_map_exampleColor
+           @see #offline_map_exampleDimension
+           @see #offline_map_exampleDrawable
+           @see #offline_map_exampleString
+         */
+        public static final int[] offline_map = {
+            0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.track.android.R.attr#exampleColor}
+          attribute's value can be found in the {@link #offline_map} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.track.android:exampleColor
+        */
+        public static final int offline_map_exampleColor = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.track.android.R.attr#exampleDimension}
+          attribute's value can be found in the {@link #offline_map} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.track.android:exampleDimension
+        */
+        public static final int offline_map_exampleDimension = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.track.android.R.attr#exampleDrawable}
+          attribute's value can be found in the {@link #offline_map} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.track.android:exampleDrawable
+        */
+        public static final int offline_map_exampleDrawable = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.track.android.R.attr#exampleString}
+          attribute's value can be found in the {@link #offline_map} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.track.android:exampleString
+        */
+        public static final int offline_map_exampleString = 0;
+    };
 }

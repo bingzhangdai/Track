@@ -24,6 +24,7 @@
     <!-- From: file:/home/david/Android/AndroidStudioProjects/Track1/app/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="background">#E8DDCB</color>
+    <color name="but_background">#ffefefef</color>
     <color name="button_background">#036564</color>
     <color name="grey_background">#ffefefef</color>
     <color name="layout_background">#CDB380</color>
@@ -34,8 +35,11 @@
     <color name="title_foreground_color">#fffff5f7</color>
     <color name="window_info_background_color">#033649</color>
     <color name="window_info_text_color">#fffff5f7</color>
+    <declare-styleable name="offline_map"><attr format="string" name="exampleString"/><attr format="dimension" name="exampleDimension"/><attr format="color" name="exampleColor"/><attr format="color|reference" name="exampleDrawable"/></declare-styleable>
     <!-- From: file:/home/david/Android/AndroidStudioProjects/Track1/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="activity_vertical_padding">12dp</dimen>
     <dimen name="common_text_size">18sp</dimen>
     <dimen name="layout_horizontal_padding">8dp</dimen>
@@ -60,11 +64,13 @@
     <string name="photo_view_description">image</string>
     <string name="save_button_name">保存</string>
     <string name="search_button_name">搜索</string>
+    <string name="set_date">date</string>
     <string name="settings_end_item_title">结束时间</string>
     <string name="settings_interval_item_title">间隔时间</string>
     <string name="settings_record_switch_title">踪迹记录</string>
     <string name="settings_start_item_title">开始时间</string>
     <string name="time_item_title">时间</string>
+    <string name="title_activity_base_map">BaseMap</string>
     <!-- From: file:/home/david/Android/AndroidStudioProjects/Track1/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Light">

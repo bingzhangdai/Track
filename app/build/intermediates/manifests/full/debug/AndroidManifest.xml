@@ -13,6 +13,7 @@
     <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
     <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
@@ -27,6 +28,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:name="com.track.android.TrackApplication"
         android:allowBackup="true"
@@ -35,7 +38,7 @@
         android:theme="@style/AppTheme" >
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="rqCNo6pg4atryl8k9nTR2Qqw" />
+            android:value="Sj3FVCA3Ysv98xLX8w9Bv8I3" />
 
         <activity
             android:name="com.track.android.MainActivity"
@@ -49,18 +52,16 @@
         <activity
             android:name="com.track.android.TrackActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppBaseTheme" >
-        </activity>
+            android:theme="@style/AppBaseTheme" />
         <activity
             android:name="com.track.android.PhotoActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppBaseTheme" >
-        </activity>
+            android:theme="@style/AppBaseTheme" />
         <activity
             android:name="com.track.android.CreateTrackActivity"
             android:label="@string/app_name"
             android:theme="@style/AppBaseTheme" >
->
+            >
         </activity>
 
         <receiver android:name="com.track.android.BootReceiver" >
@@ -73,11 +74,14 @@
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote" >
-        </service>
+            android:process=":remote" />
 
         <activity android:name="com.track.android.SettingActivity" />
         <activity android:name="com.track.android.TrackListActivity" />
+        <activity android:name="com.track.android.offline_map" />
+        <activity
+            android:name="com.track.android.BaseMap"
+            android:label="@string/title_activity_base_map" />
     </application>
 
 </manifest>

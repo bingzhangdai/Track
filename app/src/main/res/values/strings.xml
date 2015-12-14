@@ -11,14 +11,16 @@
     <string name="add_button_name">添加</string>
     <string name="photo_button_name">拍照</string>
     <string name="photo_view_description">image</string>
-	<string name="location_name_item_title">位置</string>
-	<string name="date_item_title">日期</string>
-	<string name="time_item_title">时间</string>
-	<string name="detail_item_title">点滴记录</string>
-	<string name="photo_item_title">精彩瞬间</string>
-	<string name="settings_record_switch_title">踪迹记录</string>
-	<string name="settings_interval_item_title">间隔时间</string>
-	<string name="settings_start_item_title">开始时间</string>
-	<string name="settings_end_item_title">结束时间</string>
-	<string name="detail_content_hint">内容</string>
+    <string name="location_name_item_title">位置</string>
+    <string name="date_item_title">日期</string>
+    <string name="time_item_title">时间</string>
+    <string name="detail_item_title">点滴记录</string>
+    <string name="photo_item_title">精彩瞬间</string>
+    <string name="settings_record_switch_title">踪迹记录</string>
+    <string name="settings_interval_item_title">间隔时间</string>
+    <string name="settings_start_item_title">开始时间</string>
+    <string name="settings_end_item_title">结束时间</string>
+    <string name="detail_content_hint">内容</string>
+    <string name="set_date">date</string>
+    <string name="title_activity_base_map">BaseMap</string>
 </resources>

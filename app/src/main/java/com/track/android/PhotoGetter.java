@@ -13,7 +13,7 @@ import android.os.Environment;
 import android.util.Log;
 
 public class PhotoGetter {
-	ArrayList<File> photos = new ArrayList<File>();
+	ArrayList<File> photos = new ArrayList<>();
 	Comparator<File> comparator = new Comparator<File>() {
 		
 		@Override
@@ -27,7 +27,7 @@ public class PhotoGetter {
 		}
 	};
 	public PhotoGetter() {
-		Queue<File> queue = new LinkedList<File>();
+		Queue<File> queue = new LinkedList<>();
 		File file = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
 		queue.add(file);
 		while (!queue.isEmpty()){
@@ -65,7 +65,7 @@ public class PhotoGetter {
 				break;
 			}
 		}
-		ArrayList<File> result = new ArrayList<File>();
+		ArrayList<File> result = new ArrayList<>();
 		if (startIndex == -1)
 			return result;
 		for (int i = startIndex; i <= endIndex; ++i){

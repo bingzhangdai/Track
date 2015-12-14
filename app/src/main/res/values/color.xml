@@ -11,4 +11,5 @@
     <color name="window_info_text_color">#fffff5f7</color>
     <color name="window_info_background_color">#033649</color>
     <color name="layout_border">#ffcccccc</color>
+    <color name="but_background">#ffefefef</color>
 </resources>
