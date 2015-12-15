@@ -56,6 +56,7 @@ public class ImageAdapter extends BaseAdapter{
 			addImage(uri, resolver);
 		}
 		notifyDataSetChanged();
+
 	}
 	public void removeImage(Uri uri){
 		for (int i = 0; i != uriArray.size(); ++i){

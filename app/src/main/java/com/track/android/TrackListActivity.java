@@ -33,9 +33,10 @@ public class TrackListActivity extends Activity {
         listViewAdapter.setListener(new OnItemClickListener() {
 			
 			@Override
-			public void onClick(View v, TrackData data) {
+			public void onClick(View v, TrackData data, int position) {
 				Intent intent = new Intent();
 				intent.putExtra("data", data);
+                intent.putExtra("position", position);
 				intent.setClass(getBaseContext(), TrackActivity.class);
 				startActivityForResult(intent, TrackActivity.TRACK_RESULT_CODE);
 				overridePendingTransition(R.anim.slide_in_right,
@@ -45,7 +46,20 @@ public class TrackListActivity extends Activity {
         listView.setAdapter(listViewAdapter);
         listViewAdapter.setDatas(datas);
 	}
-	public void onSaveButtonClick(View v){
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == TrackActivity.RESULT_OK)
+            if (data.getIntExtra(TrackActivity.ACTION_STRING, 0) == TrackActivity.ACTION_DELETE_CODE) {
+                listViewAdapter.removeData(data.getIntExtra("position", 0));
+            }
+            else if (data.getIntExtra(TrackActivity.ACTION_STRING, 0) == TrackActivity.ACTION_CHANGE_CODE) {
+                listViewAdapter.setData(data.getIntExtra("position", 0), (TrackData)data.getSerializableExtra("data"));
+            }
+    }
+
+    public void onSaveButtonClick(View v){
 		onBackPressed();
 	}
 	@Override

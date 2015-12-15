@@ -35,6 +35,7 @@ public class TrackActivity extends Activity {
 	private EditText editLocationText;
 	private TimePicker editTimePicker;
 	private ImageAdapter imageAdapter;
+	private TrackData data;
 	private final int IMAGE_CODE = 0;
 	private final int CAMERA_CODE = 1;
 	private boolean isChanged = false;
@@ -49,7 +50,7 @@ public class TrackActivity extends Activity {
 		
 		//get the data from the mainActivity
 		Intent intent = getIntent();
-		TrackData data = (TrackData)intent.getSerializableExtra("data");
+		data = (TrackData)intent.getSerializableExtra("data");
 		
 		setContentView(R.layout.activity_track);
 		
@@ -60,6 +61,7 @@ public class TrackActivity extends Activity {
 		takePhotoButton = (Button)findViewById(R.id.takephoto_button);
 		imageAdapter = new ImageAdapter(this);
 		String photos = data.getPhotos();
+		Log.i("success","photos:" + photos);
 		imageAdapter.addImages(photos);
 		editButton = (Button)findViewById(R.id.edit_button);
 		editText = (EditText)findViewById(R.id.textarea);

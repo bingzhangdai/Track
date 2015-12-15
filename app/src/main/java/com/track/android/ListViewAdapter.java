@@ -106,7 +106,7 @@ public class ListViewAdapter extends BaseAdapter {
 			@Override
 			public void onClick(View v) {
 				if (listener != null)
-					listener.onClick(v, datas.get(position));
+					listener.onClick(v, datas.get(position), position);
 			}
 		});
 		return view;
@@ -128,7 +128,27 @@ public class ListViewAdapter extends BaseAdapter {
 		this.listener = listener;
 	}
 
+	public void removeData(int position) {
+		DatabaseHelper db = new DatabaseHelper(context);
+		TrackData data = datas.get(position);
+		db.deleteData(data);
+		db.close();
+		if (position > datas.size() - 1)
+			return;
+		datas.remove(position);
+		indexs.remove(position);
+		ListViewAdapter.this.notifyDataSetChanged();
+		setEdited(true);
+	}
 	interface OnItemClickListener{
-		void onClick(View v, TrackData data);
+		void onClick(View v, TrackData data, int position);
+	}
+
+	public void setData(int position, TrackData data) {
+		datas.set(position, data);
+		DatabaseHelper db = new DatabaseHelper(context);
+		db.updateData(data);
+		db.close();
+		this.notifyDataSetChanged();
 	}
 }
