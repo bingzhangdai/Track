@@ -9,4 +9,4 @@
            android:duration="@android:integer/config_mediumAnimTime" />
     <alpha android:fromAlpha="1.0" android:toAlpha="0"
             android:duration="@android:integer/config_mediumAnimTime"/>
-</set><!-- From: file:/home/david/Android/AndroidStudioProjects/Track1/app/src/main/res/anim/zoom_out.xml -->
+</set><!-- From: file:/home/david/Android/AndroidStudioProjects/Track-master/Track-master/app/src/main/res/anim/zoom_out.xml -->

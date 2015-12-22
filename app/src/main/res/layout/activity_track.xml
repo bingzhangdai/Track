@@ -221,7 +221,8 @@
 		        </LinearLayout>
 				<com.track.android.FixedGridView
 				    android:id="@+id/photos"
-				    style="@style/fixedGridViewStyle" >
+				    style="@style/fixedGridViewStyle"
+					android:layout_height="77dp">
 	        	</com.track.android.FixedGridView>
 	     	</LinearLayout>
 	    </LinearLayout>

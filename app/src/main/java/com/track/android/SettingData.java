@@ -65,7 +65,7 @@ public class SettingData {
 		editor.putInt(STARTHOUR_KEY_STRING, startHour);
 		editor.putInt(ENDHOUR_KEY_STRING, endHour);
 		editor.putBoolean(ISON_KEY_STRING, isOn);
-		editor.commit();
+		editor.apply();
 	}
 
 	public boolean isOn() {

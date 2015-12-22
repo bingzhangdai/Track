@@ -84,20 +84,32 @@ containing a value of this type.
     public static final class drawable {
         public static final int button_text=0x7f020000;
         public static final int garbage=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int image_delete_button=0x7f020003;
-        public static final int infowindow_background=0x7f020004;
-        public static final int layout_head_shape=0x7f020005;
-        public static final int layout_shape=0x7f020006;
-        public static final int left_arrow=0x7f020007;
-        public static final int list=0x7f020008;
-        public static final int listview_shape=0x7f020009;
-        public static final int minus=0x7f02000a;
-        public static final int overlay=0x7f02000b;
-        public static final int plus=0x7f02000c;
-        public static final int popup=0x7f02000d;
-        public static final int right_arrow=0x7f02000e;
-        public static final int search_icons=0x7f02000f;
+        public static final int garbage1=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int image_delete_button=0x7f020004;
+        public static final int info_background=0x7f020005;
+        public static final int information=0x7f020006;
+        public static final int infowindow_background=0x7f020007;
+        public static final int layout_head_shape=0x7f020008;
+        public static final int layout_shape=0x7f020009;
+        public static final int left_arrow=0x7f02000a;
+        public static final int list=0x7f02000b;
+        public static final int list1=0x7f02000c;
+        public static final int list_background=0x7f02000d;
+        public static final int list_bg=0x7f02000e;
+        public static final int listview_shape=0x7f02000f;
+        public static final int map=0x7f020010;
+        public static final int minus=0x7f020011;
+        public static final int overlay=0x7f020012;
+        public static final int plus=0x7f020013;
+        public static final int plus1=0x7f020014;
+        public static final int popup=0x7f020015;
+        public static final int right_arrow=0x7f020016;
+        public static final int running=0x7f020017;
+        public static final int search_icons=0x7f020018;
+        public static final int search_icons1=0x7f020019;
+        public static final int search_icons2=0x7f02001a;
+        public static final int splash=0x7f02001b;
     }
     public static final class id {
         public static final int LinearLayout02=0x7f0b000d;
@@ -189,11 +201,12 @@ containing a value of this type.
         public static final int activity_offline_map=0x7f030003;
         public static final int activity_photo=0x7f030004;
         public static final int activity_settings=0x7f030005;
-        public static final int activity_track=0x7f030006;
-        public static final int imageview_in_gridview=0x7f030007;
-        public static final int info_window=0x7f030008;
-        public static final int listview_layout=0x7f030009;
-        public static final int offline_local=0x7f03000a;
+        public static final int activity_splash=0x7f030006;
+        public static final int activity_track=0x7f030007;
+        public static final int imageview_in_gridview=0x7f030008;
+        public static final int info_window=0x7f030009;
+        public static final int listview_layout=0x7f03000a;
+        public static final int offline_local=0x7f03000b;
     }
     public static final class menu {
         public static final int main=0x7f0a0000;

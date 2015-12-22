@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">android</string>
+    <string name="app_name">Running Fun</string>
     <string name="action_settings">设置</string>
     <string name="edit_button_name">编辑</string>
     <string name="save_button_name">保存</string>

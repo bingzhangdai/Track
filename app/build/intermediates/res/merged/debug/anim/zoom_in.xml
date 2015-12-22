@@ -7,4 +7,4 @@
            android:toYScale="1.0"
            android:pivotX="50%p" android:pivotY="50%p"
            android:duration="@android:integer/config_mediumAnimTime" />
-</set><!-- From: file:/home/david/Android/AndroidStudioProjects/Track1/app/src/main/res/anim/zoom_in.xml -->
+</set><!-- From: file:/home/david/Android/AndroidStudioProjects/Track-master/Track-master/app/src/main/res/anim/zoom_in.xml -->

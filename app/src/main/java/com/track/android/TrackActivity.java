@@ -194,6 +194,7 @@ public class TrackActivity extends Activity {
 				Toast.makeText(getBaseContext(), "时间格式为hh:mm,时间修改失败",
 						Toast.LENGTH_SHORT).show();
 				hour = data.getHour();
+				hour = data.getHour();
 				minute = data.getMinute();
 			}
 			hour = Integer.valueOf(strs[0]);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/home/david/Android/AndroidStudioProjects/Track1/app/src/main/res/values/entries.xml -->
+    <!-- From: file:/home/david/Android/AndroidStudioProjects/Track-master/Track-master/app/src/main/res/values/entries.xml -->
     <eat-comment/>
     <string-array name="end">
         <item>18时</item>
@@ -21,22 +21,22 @@
         <item>9时</item>
         <item>11时</item>
     </string-array>
-    <!-- From: file:/home/david/Android/AndroidStudioProjects/Track1/app/src/main/res/values/color.xml -->
+    <!-- From: file:/home/david/Android/AndroidStudioProjects/Track-master/Track-master/app/src/main/res/values/color.xml -->
     <eat-comment/>
-    <color name="background">#E8DDCB</color>
+    <color name="background">#d9d9d9</color>
     <color name="but_background">#ffefefef</color>
-    <color name="button_background">#036564</color>
+    <color name="button_background">#60a1cc</color>
     <color name="grey_background">#ffefefef</color>
-    <color name="layout_background">#CDB380</color>
-    <color name="layout_border">#ffcccccc</color>
-    <color name="map_line_color">#031634</color>
+    <color name="layout_background">#d0c6e4</color>
+    <color name="layout_border">#a384e2</color>
+    <color name="map_line_color">#4084b1</color>
     <color name="pressed_title_foreground_color">#ffefefef</color>
-    <color name="title_background">#036564</color>
-    <color name="title_foreground_color">#fffff5f7</color>
-    <color name="window_info_background_color">#033649</color>
+    <color name="title_background">#60a1cc</color>
+    <color name="title_foreground_color">#EDEDED</color>
+    <color name="window_info_background_color">#4a3576</color>
     <color name="window_info_text_color">#fffff5f7</color>
     <declare-styleable name="offline_map"><attr format="string" name="exampleString"/><attr format="dimension" name="exampleDimension"/><attr format="color" name="exampleColor"/><attr format="color|reference" name="exampleDrawable"/></declare-styleable>
-    <!-- From: file:/home/david/Android/AndroidStudioProjects/Track1/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/home/david/Android/AndroidStudioProjects/Track-master/Track-master/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
@@ -47,11 +47,11 @@
     <dimen name="layout_minheight">36dp</dimen>
     <dimen name="layout_vertical_padding">12dp</dimen>
     <dimen name="title_height">40dp</dimen>
-    <!-- From: file:/home/david/Android/AndroidStudioProjects/Track1/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/home/david/Android/AndroidStudioProjects/Track-master/Track-master/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_settings">设置</string>
     <string name="add_button_name">添加</string>
-    <string name="app_name">android</string>
+    <string name="app_name">Running Fun</string>
     <string name="date_item_title">日期</string>
     <string name="delete_button_name">删除</string>
     <string name="detail_content_hint">内容</string>
@@ -71,7 +71,7 @@
     <string name="settings_start_item_title">开始时间</string>
     <string name="time_item_title">时间</string>
     <string name="title_activity_base_map">BaseMap</string>
-    <!-- From: file:/home/david/Android/AndroidStudioProjects/Track1/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/home/david/Android/AndroidStudioProjects/Track-master/Track-master/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--

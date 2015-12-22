@@ -223,4 +223,4 @@
 	   android:text="@string/finish_button_name"
 	   android:onClick="onSubmitButtonClick" />
 </LinearLayout>
-</RelativeLayout><!-- From: file:/home/david/Android/AndroidStudioProjects/Track1/app/src/main/res/layout/activity_create_track.xml -->
+</RelativeLayout><!-- From: file:/home/david/Android/AndroidStudioProjects/Track-master/Track-master/app/src/main/res/layout/activity_create_track.xml -->

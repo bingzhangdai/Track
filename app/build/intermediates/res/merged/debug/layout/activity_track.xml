@@ -221,7 +221,8 @@
 		        </LinearLayout>
 				<com.track.android.FixedGridView
 				    android:id="@+id/photos"
-				    style="@style/fixedGridViewStyle" >
+				    style="@style/fixedGridViewStyle"
+					android:layout_height="77dp">
 	        	</com.track.android.FixedGridView>
 	     	</LinearLayout>
 	    </LinearLayout>
@@ -249,4 +250,4 @@
 	        android:text="@string/delete_button_name" />
 	</LinearLayout>
 
-</RelativeLayout><!-- From: file:/home/david/Android/AndroidStudioProjects/Track1/app/src/main/res/layout/activity_track.xml -->
+</RelativeLayout><!-- From: file:/home/david/Android/AndroidStudioProjects/Track-master/Track-master/app/src/main/res/layout/activity_track.xml -->

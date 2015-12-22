@@ -4,4 +4,4 @@
 	<item android:state_pressed="false" android:color="@color/title_foreground_color"></item>
 
 </selector>
-<!-- From: file:/home/david/Android/AndroidStudioProjects/Track1/app/src/main/res/drawable-hdpi/button_text.xml -->
+<!-- From: file:/home/david/Android/AndroidStudioProjects/Track-master/Track-master/app/src/main/res/drawable-hdpi/button_text.xml -->

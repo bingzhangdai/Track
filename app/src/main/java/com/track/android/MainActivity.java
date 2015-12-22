@@ -31,6 +31,7 @@ import com.baidu.mapapi.search.geocode.ReverseGeoCodeResult;
 import com.track.android.R;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -72,6 +73,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
 		menuLists = new ArrayList<String>();
 		menuLists.add("运动信息");
 		menuLists.add("离线地图");
+		menuLists.add("about me");
 	}
 	private ArrayAdapter<String> adapter;
 
@@ -424,7 +426,14 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
 		if (menuLists.get(position).equals("运动信息")) {
 			onListButtonClick(view);
 		}
+		if (menuLists.get(position).equals("about me")) {
+//			new AlertDialog.Builder(getBaseContext())
+//					.setTitle("About me")
+//					.setMessage("https://github.com/bingzhangdai/Track")
+//					.setPositiveButton("OK", null)
+//					.show();
+			Toast.makeText(getBaseContext(), "https://github.com/bingzhangdai/Track", Toast.LENGTH_LONG).show();
+		}
 		mDrawerLayout.closeDrawer(mDrawerList);
 	}
-
 }
